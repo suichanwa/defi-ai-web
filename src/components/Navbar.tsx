@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="font-display text-lg font-bold tracking-wide text-[var(--primary)]">
           defi-ai-app
         </div>
-        <Button href="#download" size="sm">
+        <Button href="/#/download" size="sm">
           Download APK
         </Button>
       </div>

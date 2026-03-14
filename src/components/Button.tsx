@@ -8,6 +8,9 @@ type ButtonProps = {
   size?: 'sm' | 'md' | 'lg'
   className?: string
   ariaLabel?: string
+  download?: boolean | string
+  target?: string
+  rel?: string
 }
 
 const sizeStyles: Record<NonNullable<ButtonProps['size']>, string> = {
@@ -30,6 +33,9 @@ const Button = ({
   size = 'md',
   className = '',
   ariaLabel,
+  download,
+  target,
+  rel,
 }: ButtonProps) => {
   const baseStyles =
     'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]/70'
@@ -40,6 +46,9 @@ const Button = ({
       <motion.a
         href={href}
         aria-label={ariaLabel}
+        download={download}
+        target={target}
+        rel={rel}
         className={combined}
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.98 }}

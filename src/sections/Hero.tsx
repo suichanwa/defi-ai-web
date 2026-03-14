@@ -42,7 +42,7 @@ const Hero = () => {
             with no one else holding your keys.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button href="#download" size="lg">
+            <Button href="/#/download" size="lg">
               Download APK
             </Button>
           </div>
