@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import Button from '../components/Button'
 import PhoneMockup from '../components/PhoneMockup'
 
 const Hero = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="relative overflow-hidden pb-20 pt-28">
       <div className="absolute inset-0 -z-10">
@@ -29,26 +32,22 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[rgba(18,18,31,0.8)] px-4 py-1 text-xs uppercase tracking-[0.35em] text-[var(--muted)]">
-            SOLANA / SELF-CUSTODIAL
-          </div>
-          <h1 className="font-display mt-6 text-4xl font-bold leading-tight text-[var(--text)] sm:text-5xl lg:text-6xl">
-            Your Keys.
+          <h1 className="font-display mt-6 text-4xl font-bold leading-tight text-(--text) sm:text-5xl lg:text-6xl">
+            {t('hero.titleLine1')}
             <br />
-            Your Crypto.
+            {t('hero.titleLine2')}
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-[var(--muted)] sm:text-lg">
-            A Solana wallet built for real DeFi users. Trade, track, and message - all from your phone,
-            with no one else holding your keys.
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-(--muted) sm:text-lg">
+            {t('hero.description')}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button href="/#/download" size="lg">
-              Download APK
+              {t('nav.download')}
             </Button>
           </div>
-          <div className="mt-8 flex items-center gap-3 text-sm text-[var(--muted)]">
-            <span className="inline-flex h-2 w-2 rounded-full bg-[var(--green)]" />
-            Live pricing | End-to-end messaging | Zero custody risk
+          <div className="mt-8 flex items-center gap-3 text-sm text-(--muted)">
+            <span className="inline-flex h-2 w-2 rounded-full bg-(--green)" />
+            {t('hero.status')}
           </div>
         </motion.div>
 

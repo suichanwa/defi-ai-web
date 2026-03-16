@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import Features from './sections/Features'
@@ -6,6 +7,7 @@ import Download from './sections/Download'
 import DownloadPage from './sections/DownloadPage'
 
 const App = () => {
+  const { t } = useTranslation()
   const [isDownloadPage, setIsDownloadPage] = useState(window.location.hash === '#/download')
 
   useEffect(() => {
@@ -22,15 +24,15 @@ const App = () => {
   }
 
   return (
-    <div className="bg-[var(--bg)] text-[var(--text)]">
+    <div className="bg-(--bg) text-(--text)">
       <Navbar />
       <main>
         <Hero />
         <Features />
         <Download />
       </main>
-      <footer className="border-t border-[var(--border)] py-8 text-center text-sm text-[var(--muted)]">
-        (c) 2026 defi-ai-app | Built on Solana
+      <footer className="border-t border-(--border) py-8 text-center text-sm text-(--muted)">
+        {t('footer.copy')}
       </footer>
     </div>
   )

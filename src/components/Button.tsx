@@ -21,9 +21,9 @@ const sizeStyles: Record<NonNullable<ButtonProps['size']>, string> = {
 
 const variantStyles: Record<NonNullable<ButtonProps['variant']>, string> = {
   primary:
-    'bg-[var(--primary)] text-[var(--text)] shadow-[0_12px_30px_rgba(124,92,252,0.25)] hover:bg-[var(--primary-hover)]',
+    'bg-(--primary) text-(--text) shadow-[0_12px_30px_rgba(124,92,252,0.25)] hover:bg-(--primary-hover)',
   outline:
-    'border border-[var(--border)] text-[var(--text)] hover:border-[var(--primary)] hover:text-[var(--primary)]',
+    'border border-(--border) text-(--text) hover:border-(--primary) hover:text-(--primary)',
 }
 
 const Button = ({
@@ -38,7 +38,7 @@ const Button = ({
   rel,
 }: ButtonProps) => {
   const baseStyles =
-    'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]/70'
+    'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary)/70'
   const combined = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`
 
   if (href) {
