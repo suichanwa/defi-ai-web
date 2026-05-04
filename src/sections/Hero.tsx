@@ -7,7 +7,7 @@ const Hero = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="relative overflow-hidden pb-20 pt-28">
+    <section className="relative overflow-hidden pb-[5.5rem] pt-32">
       <div className="absolute inset-0 -z-10">
         <motion.div
           className="absolute -top-24 left-10 h-56 w-56 rounded-full bg-[rgba(124,92,252,0.35)] blur-[120px]"
@@ -26,32 +26,34 @@ const Hero = () => {
         />
       </div>
 
-      <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="section-wrap grid min-h-[calc(100vh-8rem)] items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
+          <div className="pill-label">Solana / Self-Custodial</div>
           <h1 className="font-display mt-6 text-4xl font-bold leading-tight text-(--text) sm:text-5xl lg:text-6xl">
             {t('hero.titleLine1')}
             <br />
             {t('hero.titleLine2')}
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-(--muted) sm:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-(--muted-strong) sm:text-lg">
             {t('hero.description')}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <Button href="/#/download" size="lg">
               {t('nav.download')}
             </Button>
           </div>
-          <div className="mt-8 flex items-center gap-3 text-sm text-(--muted)">
+          <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-(--muted)">
             <span className="inline-flex h-2 w-2 rounded-full bg-(--green)" />
             {t('hero.status')}
           </div>
         </motion.div>
 
         <motion.div
+          className="relative"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}

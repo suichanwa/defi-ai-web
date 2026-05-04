@@ -16,14 +16,14 @@ type ButtonProps = {
 const sizeStyles: Record<NonNullable<ButtonProps['size']>, string> = {
   sm: 'px-4 py-2 text-sm',
   md: 'px-5 py-2.5 text-sm',
-  lg: 'px-6 py-3 text-base',
+  lg: 'px-6 py-3.5 text-base',
 }
 
 const variantStyles: Record<NonNullable<ButtonProps['variant']>, string> = {
   primary:
-    'bg-(--primary) text-(--text) shadow-[0_12px_30px_rgba(124,92,252,0.25)] hover:bg-(--primary-hover)',
+    'border border-(--primary) bg-(--primary) text-(--text) shadow-[0_18px_35px_rgba(124,92,252,0.28)] hover:border-(--primary-hover) hover:bg-(--primary-hover)',
   outline:
-    'border border-(--border) text-(--text) hover:border-(--primary) hover:text-(--primary)',
+    'border border-(--border) bg-[rgba(14,14,24,0.45)] text-(--text) hover:border-(--primary) hover:bg-(--primary-soft)',
 }
 
 const Button = ({
@@ -38,7 +38,7 @@ const Button = ({
   rel,
 }: ButtonProps) => {
   const baseStyles =
-    'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary)/70'
+    'inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-wide transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary)/70'
   const combined = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`
 
   if (href) {

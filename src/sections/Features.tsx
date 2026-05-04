@@ -47,18 +47,19 @@ const Features = () => {
   ]
 
   return (
-    <section id="features" className="py-20">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="features" className="py-[5.5rem]">
+      <div className="section-wrap">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="font-display text-3xl font-semibold text-(--text) sm:text-4xl">
+          <span className="pill-label">Core capabilities</span>
+          <h2 className="section-heading mt-6 text-3xl font-semibold sm:text-4xl">
             {t('features.heading')}
           </h2>
-          <p className="mt-4 max-w-2xl text-base text-(--muted) sm:text-lg">
+          <p className="section-copy mt-4 max-w-2xl text-base sm:text-lg">
             {t('features.description')}
           </p>
         </motion.div>
@@ -67,21 +68,21 @@ const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={feature.key}
-              className="group rounded-2xl border border-(--border) bg-(--surface) p-6 transition duration-300 hover:border-(--primary)/60"
+              className="feature-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.05 }}
               viewport={{ once: true, amount: 0.2 }}
             >
               <div className="flex items-center gap-3 text-(--primary)">
-                <div className="rounded-xl border border-(--border) bg-[rgba(124,92,252,0.1)] p-3 text-(--primary)">
+                <div className="rounded-xl border border-(--border) bg-(--primary-soft) p-3 text-(--primary)">
                   {feature.icon}
                 </div>
                 <h3 className="font-display text-xl font-semibold text-(--text)">
                   {t(`features.items.${feature.key}.title`)}
                 </h3>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-(--muted) sm:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-(--muted-strong) sm:text-base">
                 {t(`features.items.${feature.key}.description`)}
               </p>
             </motion.div>

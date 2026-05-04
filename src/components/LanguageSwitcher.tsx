@@ -32,7 +32,7 @@ const LanguageSwitcher = () => {
   }
 
   return (
-    <label className="flex items-center gap-2 rounded-full border border-(--border) bg-[rgba(12,12,22,0.8)] px-3 py-1.5 text-xs text-(--muted)">
+    <label className="flex items-center gap-2 rounded-full border border-(--border) bg-[rgba(14,14,24,0.75)] px-3 py-1.5 text-xs text-(--muted)">
       <span className="hidden sm:inline">{t('nav.language')}</span>
       <div className="relative">
         <select
@@ -51,7 +51,7 @@ const LanguageSwitcher = () => {
         <svg
           viewBox="0 0 20 20"
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-1/2 h-4 w-4 -translate-y-1/2 text-(--muted)"
+          className="pointer-events-none absolute right-0 top-1/2 h-4 w-4 -translate-y-1/2 text-(--muted-strong)"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.6"

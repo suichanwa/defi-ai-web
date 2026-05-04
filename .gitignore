@@ -29,3 +29,14 @@ dist-ssr
 !.dev.vars.example
 .env*
 !.env.example
+
+# codex plugin folders
+.agent
+.agents
+.claude
+.cline
+.continue
+.cursor
+.factory
+.trae
+.windsurf

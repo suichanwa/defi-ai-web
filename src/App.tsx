@@ -24,14 +24,14 @@ const App = () => {
   }
 
   return (
-    <div className="bg-(--bg) text-(--text)">
+    <div className="site-shell bg-(--bg) text-(--text)">
       <Navbar />
       <main>
         <Hero />
         <Features />
         <Download />
       </main>
-      <footer className="border-t border-(--border) py-8 text-center text-sm text-(--muted)">
+      <footer className="section-wrap border-t border-(--border) py-10 text-center text-sm text-(--muted)">
         {t('footer.copy')}
       </footer>
     </div>
